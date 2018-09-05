@@ -17,6 +17,7 @@ pipeline {
       }
       steps {
         echo 'Continuing with deployment'
+        input(message: 'Ci fermiamo o andiamo avanti?', id: '1', ok: '2')
       }
     }
   }
