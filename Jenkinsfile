@@ -1,21 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('Say Hello') {
+    stage('Test') {
       steps {
-        echo 'Hello World!'
-        sh 'java -version'
-        echo "${MY_NAME}"
+        milestone 1
       }
     }
-    stage('Deploy') {
-      steps {
-        echo 'Should we continue?'
-        input(message: 'Ci fermiamo o andiamo avanti?', id: '1', ok: '2')
-      }
-    }
-  }
-  environment {
-    MY_NAME = 'Paola'
   }
 }
