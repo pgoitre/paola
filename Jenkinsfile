@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Example') {
+    stage('SCM') {
       steps {
-        writeFile(file: 'myFile.txt', text: libraryResource("path/to/myFile.txt"))
+        git 'https://github.com/pgoitre/paola'
       }
     }
   }
