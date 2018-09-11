@@ -3,7 +3,12 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        milestone 1
+        git 'https://github.com/pgoitre/paola/blob/master/helloworld'
+      }
+    }
+    stage('SonarQube analysis 1') {
+      steps {
+        sh 'mvn clean package sonar:sonar'
       }
     }
   }
