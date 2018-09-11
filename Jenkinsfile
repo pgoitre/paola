@@ -3,11 +3,7 @@ pipeline {
   stages {
     stage('Example') {
       steps {
-        script {
-          log.info 'Starting'
-          log.warning 'Nothing to do!'
-        }
-
+        writeFile(file: 'myFile.txt', text: libraryResource("path/to/myFile.txt"))
       }
     }
   }
